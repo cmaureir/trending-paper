@@ -1,0 +1,159 @@
+%  article.tex (Version 3.3, released 19 January 2008)
+%  Article to demonstrate format for SPIE Proceedings
+%  Special instructions are included in this file after the
+%  symbol %>>>>
+%  Numerous commands are commented out, but included to show how
+%  to effect various options, e.g., to print page numbers, etc.
+%  This LaTeX source file is composed for LaTeX2e.
+
+%  The following commands have been added in the SPIE class
+%  file (spie.cls) and will not be understood in other classes:
+%  \supit{}, \authorinfo{}, \skiplinehalf, \keywords{}
+%  The bibliography style file is called spiebib.bst,
+%  which replaces the standard style unstr.bst.
+
+\documentclass[]{styles/spie}  %>>> use for US letter paper
+%%\documentclass[a4paper]{spie}  %>>> use this instead for A4 paper
+%%\documentclass[nocompress]{spie}  %>>> to avoid compression of citations
+%% \addtolength{\voffset}{9mm}   %>>> moves text field down
+%% \renewcommand{\baselinestretch}{1.65}   %>>> 1.65 for double spacing, 1.25 for 1.5 spacing
+%  The following command loads a graphics package to include images
+%  in the document. It may be necessary to specify a DVI driver option,
+%  e.g., [dvips], but that may be inappropriate for some LaTeX
+%  installations.
+\usepackage[]{graphicx}
+\usepackage{url}
+\usepackage[utf8]{inputenc}
+\usepackage{subfigure}
+\usepackage{amsmath}
+%\usepackage[]{hyperref}
+\title{High Performance Graphical Data Trending in a Distributed System}
+
+%>>>> The author is responsible for formatting the
+%  author list and their institutions.  Use  \skiplinehalf
+%  to separate author list from addresses and between each address.
+%  The correspondence between each author and his/her address
+%  can be indicated with a superscript in italics,
+%  which is easily obtained with \supit{}.
+
+\author{Cristi\'an Maureira\supit{a},
+        Arturo Hoffstadt\supit{a},
+        Joao L\'opez\supit{a},
+        Nicol\'as Troncoso\supit{b},
+        Rodrigo Tobar\supit{c},
+        Horst H. von Brand\supit{a}.
+\skiplinehalf
+\supit{a}Computer Systems Research Group,
+          Universidad T\'ecnica Federico Santa Mar\'{\i}a,
+          Valpara\'{\i}so, Chile; \\
+\supit{b}Associated Universities, Inc. (AUI), Santiago, Chile;
+         Universidad T\'ecnica Federico Santa Mar\'{\i}a,
+         Valpara\'{i}so, Chile\\
+\supit{c}European Southern Observatory,
+         Garching bei München, Germany
+}
+
+%>>>> Further information about the authors, other than their
+%  institution and addresses, should be included as a footnote,
+%  which is facilitated by the \authorinfo{} command.
+
+\authorinfo{Contact information: (Send correspondence to Cristi\'an Maureira) E-mail: cmaureir@csrg.inf.utfsm.cl, Telephone: +56 32 2654562, Web: \url{http://alma.inf.utfsm.cl}.}
+%%>>>> when using amstex, you need to use @@ instead of @
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%>>>> uncomment following for page numbers
+% \pagestyle{plain}
+%>>>> uncomment following to start page numbering at 301
+%\setcounter{page}{301}
+
+  \begin{document}
+  \maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+Trending near real-time data is a complex task, specially in distributed
+environments. This problem was typically tackled in financial and transaction
+systems, but it now applies to its utmost in other contexts, such as hardware
+monitoring in large-scale projects. Data handling requires subscription to
+specific data feeds that need to be implemented avoiding replication, and rate of transmission has to be assured. On the side of the graphical client,
+rendering needs to be fast enough so it may be perceived as real-time processing
+and display.
+
+ALMA Common Software (ACS) provides a software
+infrastructure for distributed projects which may require trending large
+volumes of data. For theses requirements ACS offers a Sampling System, which
+allows sampling selected data feeds at different frequencies. Along with this,
+it provides a graphical tool to plot the collected information, which needs
+to perform as well as possible.
+
+Currently there are many graphical libraries available for data trending. This
+imposes a problem when trying to choose one: It is necessary to know which has
+the best performance, and which combination of programming language and library
+is the best decision.
+This document analyzes the performance of different graphical libraries and
+languages in order to present the optimal environment when writing or
+re-factoring an application using trending technologies in distributed systems.
+To properly address the complexity of the problem, a specific set of alternative
+was pre-selected, including libraries in Java and Python, languages which are
+part of ACS. A stress benchmark will be developed in a simulated distributed
+environment using ACS in order to test the trending libraries.
+\end{abstract}
+
+%>>>> Include a list of keywords after the abstract
+
+\keywords{Trending, Plotting, Benchmarking, Distributed Systems, ACS}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+\label{sec:intro}  % \label{} allows reference to this section
+\input{src/introduction}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Problem}
+\label{sec:problem}
+\input{src/problem}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{State of art}
+\label{sec:state}
+\input{src/state}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Methodology Proposal}
+\label{sec:method}
+\input{src/method}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Graphical Library Benchmark}
+\label{sec:gbenchmark}
+\input{src/gbenchmark}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Real Benchmark}
+\label{sec:benchmark}
+\input{src/benchmark}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusions}
+\label{sec:conclusions}
+\input{src/conclusions}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\appendix    %>>>> this command starts appendixes
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\acknowledgments     %>>>> equivalent to \section*{ACKNOWLEDGMENTS}
+
+This work and the associated research has been conducted with funds granted by CONICYT, specifically ALMA-CONICYT grant \#31090034 and \#31080031.
+Horst H. von Brand's work was also supported in part
+by Centro Cient\'\i fico-Tecnol\'ogico de Valpara\'\i so (CCTVal) grant FB0821.
+Without their help, this work would have been impossible.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% References %%%%%
+\hfill
+\bibliography{report}   %>>>> bibliography data in report.bib
+\bibliographystyle{styles/spiebib}   %>>>> makes bibtex use spiebib.bst
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

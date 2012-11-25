@@ -1,0 +1,73 @@
+% The performance of the language
+When a development team is given the task of creating a software project,
+one of the first questions is the selection of the programming language.
+This is a very important decision, as performance is greatly affected by the
+paradigm and implementation of the available compilers for that programming
+language. The usual manner to solve this is to prototype, use previous
+experience and test the different wanted characteristics, such as
+modularity, performance, and scalability.
+
+There are comparisons between different programming
+languages, such as~\cite{empirical}, in which the author gives a walk
+through the origin of each language, and puts emphasis in the validation
+of a programming language comparison, because that depends on different
+characteristics, such as programmer capabilities, the different task
+and work conditions, the handling of misunderstood requirements,
+the paradigms employed (object oriented, imperative, generic programming).
+As is to be expected, such comparisons tend to concentrate only on one area.
+
+% performance of the graphical library
+
+Aside the selection of programming language, the team has to
+consider the selection of a graphical library. This is a nested decision, as very
+few libraries are available for several languages.
+Then, the question arises: ``Of all the graphical libraries available, which is
+the best one for my project?''
+Strictly speaking, one should analyse a couple of libraries and
+then make a decision. In practice this is almost never done, as schedules are usually tight so
+there is no time available to evaluate every choice.
+
+In our case, the main problem is to find the best choice in the data trending
+area, where performance of the graphical representation are critical.
+There are several ways to measure the performance and quality of graphical
+libraries, some examples are:
+\begin{itemize}
+	\item Number of chart types handled.
+	\item Trace options.
+	\item Plot functionality.
+	\item Frames Per Second (FPS).
+        \item Data volume vs. performance
+\end{itemize}
+In the present work the most important metrics are FPS and the data
+volume vs. performance. Large amounts of data need to be quickly processed
+and displayed, together with additional information.
+
+% operations in distributed systems
+
+The development team has still two decisions open, both of them pending from a
+proper comparison. But there is yet another problem.
+Many systems in real world applications are not \emph{single-node} systems,
+so that performance tested on a single computer may give a different result
+than when deployed on a distributed system. This is the case of
+ALMA and ALMA Common Software (ACS) distributed applications. Distributed systems are complex, and
+communications is an important part of the data pre-processing.
+
+% The idea is have severals autonomous computers, communicating with each to
+% another,
+% trough a computer network in order to achieve a common goal.
+% Generally this systems are like \emph{house of cards},
+% all the cards are important, without one, the system will not work.
+
+Given this, a third question remains open: ``How does a distributed system
+affect my trending application's performance?''
+
+% data trending in distributed systems
+
+% Finally, the data trending per se needs a good choice of the previous
+% statement,
+% to achieve a high performance application.
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../article"
+%%% End:

@@ -1,0 +1,44 @@
+% General Conclusions
+
+Better ways of measuring performance,
+like the number of data streams that can be displayed at a given FPS
+or the impact of smoothly evolving data or scattered points,
+should be considered.
+
+Looking backwards, the evolution of the different libraries give the
+programmers a lot of ``path to follow'' when starting a new project. The performance
+of the actual data trending libraries in different languages is very important
+because all of them try to offer ``simple programming'' in this application area.
+Comparing the features of the libraries is not so important, because most of them
+are rather robust, and those with more features just allow creating more elaborate plots.
+Without going further, there are other characteristics to consider, like
+``perdurability,'' ``modularity,'' and ``scalability'' of software.
+For a long-lived project like ALMA
+(and its supporting software ACS)
+these characteristics are crucial.
+How to estimate the stability and longer range development and maintenance
+of open source software on which something like ACS is based
+is still very much an open question.
+
+In section~\ref{sec:gbenchmark} we saw benchmarks of a couple of graphic libraries
+in the three languages that ACS uses, C++, Java, and Python.
+The benchmark shows the behavior of these libraries in three levels
+of stressed environments, giving us data to discriminate among them.
+Anyway, this is not a final decision, because one benchmark is not enough to test the real
+performance of a graphical library, but it is a good start to help discriminating them with the previous
+basic functionality (plotting random data).
+Also,
+other important characteristics haven't been considered in detail.
+For a long-lived protect like ALMA
+(and its supporting ACS package)
+using stable, well-maintained base software is crucial.
+
+Finally, in section~\ref{sec:benchmark} we can see the performance of
+the existing scientific data visualization tool, developed by the Computer Systems Research Group (CSRG),
+and giving us the chance to analyze a real application in a real distributed system such as the
+ALMA project.
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../article"
+%%% End:

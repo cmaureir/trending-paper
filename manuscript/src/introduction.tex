@@ -1,0 +1,61 @@
+Atacama Large Millimeter/Sub-Millimeter Array (ALMA)~\cite{2010AAS...21547901H}
+is a joint project between astronomical organizations of Europe (ESO), North
+America (NRAO), and Japan (NAOJ). ALMA is a large radio-astronomical project,
+it will consist of at least 50 twelve meter antennas operating in the
+millimeter and sub-millimeter wavelength range with baselines up to 10\,[km].
+It will be located at an altitude above 5000\,[m] on the Chajnantor plateau in
+the middle of the Chilean Atacama desert. The science commissioning of ALMA
+will start in 2012 when the array will be fully operational for astronomical
+observations.
+
+ALMA Common Software
+(ACS)~\cite{Chiozzi02,Chiozzi04,Raffi01,chiozzi09:_acs_status} is an Object
+Oriented CORBA middleware framework (for science facilities) that
+handles communication between distributed objects.  ACS was built to support
+the complex control requirements of ALMA radio telescopes, but can be used to
+support control and data flow for any system with similar performance
+requirements~\cite{gchiozzi02}.
+Particularly, it features a Sampling System~\cite{acssamp}, which is used to
+continuously collect the values of an indicated set of properties around the
+system. This data can then be displayed by a graphical client (the Sampling
+System GUI), in form of a
+dynamical plot. This client is written in Java, using the JChart2D library, and
+is currently being used at the ALMA observatory. Nevertheless, a question
+remains open: Which is the best library/language combination for such a
+task?
+One point to note is that ACS is open source
+(it is distributed under LGPL),
+so any base software used in it
+(like graphics libraries)
+must be compatible with this.
+
+%\subsection{Trending in a Distributed System}
+The work presented in this paper
+aims at evaluating different alternatives for high performance
+graphical data trending in
+distributed systems.%, ALMA is an excellent example of a distributed environment.
+It is important to distinguish trending
+(contructing graphs of data flowing in real-time)
+from plotting
+(where graphs,
+ possibly very complex,
+ are constructed from statically available data).
+Trending is inherently real-time,
+and is mostly concerned with showing trends for data that evolves in time.
+
+First the most common  data trending solutions were identified, and a list of
+alternatives is described. Performance tests are applied to the tool
+developed for the ALMA project in order to asses the
+performance of different graphical libraries.
+The problem of selecting a programming language and trending tool
+are described,
+then we discuss the state of the art
+in trending tools and graphical trending libraries.
+A methodology to test performance is then proposed,
+and the resulting benchmarks are discussed.
+Some real-case scenario tests were performed.
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../article"
+%%% End:

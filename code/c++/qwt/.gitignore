@@ -1,0 +1,5 @@
+*.o
+qwt
+Makefile
+moc_*
+core

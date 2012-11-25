@@ -1,0 +1,156 @@
+Currently, a huge range of plotting solutions exists in the market. As time
+passes, more and more libraries are developed, or existing ones are improved,
+extended or updated. This makes it difficult both choosing one of such libraries,
+and to compare them in a distributed environment.
+In this section we aim to present some of the most used plotting and data
+trending solutions. This list is constrained to the set of languages that are
+used in ALMA Common Software (i.e., Java, C++ and
+Python).
+They are of help in understanding which
+variables are important to measure when considering the election of one
+solution.
+
+% graphical libraries state of art (Cristian)
+\subsection{Graphical Libraries}
+
+The most significant part of the work when plotting data collected over a
+distributed system is the plotting itself. In the following section we present
+some of the most used plotting libraries, giving an overview of their
+implementations.
+
+\subsubsection{Java}
+
+% JFreeChart
+\emph{JFreeChart}~\cite{JFreeChart} is a very popular chart library, since it allows to create complex charts easily.
+One of the most important characteristics, from the programmer's point of view, is its well-documented API.
+Currently, \emph{JFreeChart} supports different chart types, such as X-Y charts (line, spline, and scatter),
+pie charts, Gantt charts, bar charts (either horizontal, vertical and stacked and independent), and finally
+a single value graph (like for the case of a thermometer, compass, or speedometer).
+The flexible design of this library allows to extend the application in both the server and client sides.
+It also supports many output formats, including Swing components, image files, and
+vector graphics.
+Finally, \emph{JFreeChart} is open-source software, distributed under the terms of the GNU Lesser General
+Public Licence (LGPL), which allows to use it both in open-source and proprietary applications.
+
+% JChart2D
+\emph{JChart2D}~\cite{JChart2D} is a charting library designed for displaying
+multiple \emph{traces}, which in turn consist of \emph{trace-points},
+Its main advantage is that it provides the programmer a minimalistic way to work with charts.
+It is important to note that \emph{JChart2D} is centered around a Swing widget (Chart2D),
+so knowledge of Java AWT and Swing technologies is very useful.
+Some of its features are the renderization of the traces via lines, discs, dots, or filled polygons, multiple axes on top,
+bottom, left and right side, zoomable charts, multiples traces with different behavior in a simple chart,
+a toolbox of UI controls for charts via pop-up menus, automatic choice of units, optional display of grids, labels,
+and more.
+\emph{JChart2D} is intended for engineering tasks, since its speciality is the dynamic precise display of the data in
+a minimalistic way, without much configuration.
+\emph{JChart2D} is also published under LGPL.
+% OSI Aproved? What is that?
+
+%JCCKit
+The \emph{JCCKit}~\cite{JCCKit} is a very small chart library, which features a very flexible framework for creating
+scientific charts and plots with the necessary elements.
+\emph{JCCKit} is suitable for scientific applets, because it is written for the JDK 1.1.8 platform.
+% Wow, it sounds pretty old then...
+The purpose of this library is to provide a flexible kit for programming applets and application for the visualization
+of some data.
+Some important features of \emph{JCCKit} are that it is highly configurable,
+its extensibility and
+customizability, the automatic update of changed data, dynamic charts and plots, automatic
+rescaling, good support for logarithmic axes, line styles, symbols, fonts,
+error bars, and the compatibility with AWT graphic, SVG, and more.
+
+%QN Plot
+\emph{QN Plot}~\cite{QNPlot} is a chart implementation that provides a way to program graphs (of one or more functions)
+as Swing components. Its design makes it possible to render large amounts of real-time data,
+which is an advantage when it comes to its usage in distributed systems.
+Some features of \emph{QN Plot} are the coordination of different kinds of big decimals having arbitrary precision,
+its high performance with large amounts of data, all the classes in its implementation are thread-safe,
+the schemes of the axes have been specially written to choose step sizes for the index automatically.
+Finally, \emph{QN Plot} is free software, released under the 2-clause BSD license.
+
+\subsubsection{Python}
+% PyQwt
+The \emph{PyQwt}~\cite{PyQwt} module is a set of Python bindings for the Qwt C++ class library which extends some
+features of the Qt framework to be able to build widgets for scientific and engineering applications.
+This library provides widgets to plot 2-dimensional data and work with the  control of bounded or unbounded floating point values, and very large integer values, with various widgets displaying them.
+The main idea of \emph{PyQwt} is to merge some Python modules, so as to have a complete framework to work with
+data. It mixes the GUI library PyQt, the plotting library Qwt, and NumPy and SciPy to cover the mathematical data
+manipulation because those libraries have a lot of computational methods that help manipulating
+the data easily, because the combination of NumPy and SciPy offers an environment very similar to Matlab.
+
+% Matplotlib
+
+\emph{Matplotlib}~\cite{Matplotlib} is a very powerful plotting library developed for the Python programming language, which produces high quality figures in different formats.
+One of the main goals of this library is to make it easy to plot and manipulate data, because in a few lines one can generate histograms, bar charts, scatter-plots,
+simple plots, etc.
+Besides the Python language, \emph{Matplotlib} uses NumPy, a numerical mathematics extension for Python, to do all the heavy mathematical processing.
+\emph{Matplotlib} is very similar to MatLab, because it offers the PyLab interface to simplify learning, principally to the MatLab user. This makes it
+a good choice for numerical mathematics and signal processing tasks.
+Finally, \emph{Matplotlib} is distributed under a BSD-style license.
+
+
+% Biggles
+
+Looking at other Python libraries, we found \emph{Biggles}~\cite{Biggles},
+which provides a lot of useful tools to create and manipulate scientific plots, having too as main idea
+the complete customization of the plots, so for \emph{Biggles} the plots are a set of very simple objects.
+The idea of the \emph{Biggles} objects is a good classification, taking two categories of objects, the containers and the components; so when we have a container we
+may use a lot of components for that container.
+Finally, we have the concept of Container for all the plots, tables, etc and the idea of the Components that need a Container to work, and can't be visualized on their own.
+\emph{Biggles} is a new graphical library, so it has far to go. This library is distributed under the terms of the GNU General Public License.
+
+% PyQtGraph
+
+\emph{PyQtGraph}~\cite{PyQtGraph} is a very good library, because it uses two very popular Python modules and combines them in a nice way, we are talking of PyQt and NumPy,
+so the idea of \emph{PyQtGraph} is to combine all the features of NumPy with the widgets provided by the PyQt wrapper.
+The objectives of this library are to be a good library to work with mathematics, scientific, and engineering applications.
+\emph{PyQtGraph} is a very fast library, because it is written purely in Python and uses all the numerical capacities of NumPy and the fast display
+of Qt applications.
+Beside all the widgets that \emph{PyQtGraph} provides, there are two important features, the highly feature-rich plotting systems and an image display system
+with region-of-interest widgets.
+
+
+\subsubsection{C++}
+% Qwt
+Previously, we mentioned the PyQwt library, and we said that it is a wrapper for \emph{Qwt}~\cite{Qwt}, while \emph{Qwt} is an extension to the Qt library that
+contains useful GUI Components and utilities.
+Its main feature is the 2D plot widget, but \emph{Qwt} provides several widgets/components that facilitate programming.
+Some of these components are scales, sliders, dials, compasses, thermometers, wheels and knobs to control or display values, arrays, or ranges of type double.
+\emph{Qwt} is distributed under the terms of the Qwt License, a variation of the GNU LESSER GENERAL PUBLIC LICENSE (LGPL) with some exceptions.
+
+% Koolplot
+
+\emph{Koolplot}~\cite{Koolplot} is a very simple-to-use library that allows to create and manipulate 2D graphs.
+It is very small and basic, so it is not recommended for use in complex graph situations.
+A feature of \emph{Koolplot} is the compatibility with the MinGW compiler, so it can be used on Linux and Microsoft Windows platforms.
+Finally, \emph{Koolplot} is in the public domain.
+
+% wxMathPlot
+
+\emph{wxMathPlot}~\cite{wxMathPlot} is a properly built library to add 2D plot scientific functionality into wxWidget, a cross-platform C++ library to create applications
+for Microsoft Windows, OS X and Linux.
+As it can be inserted into wxWidgets, it allows to embed inside every wxWidget application a window for plotting different types of data.
+Some of the most important features of \emph{wxMathPlot} are the completely mouse-driven view control (pan, zoom, scroll, etc), the different output formats of
+the screenshots (BMP, PNG and JPEG), the flexible axis positioning, the several layers to plot data from vectors, movable objects, bitmaps, etc.
+Finally, \emph{wxMathPlot} is distributed under the therms of the wxWindows Licence, that is essentially LGPL with some exceptions.
+
+% CARNAC
+\emph{Carnac}~\cite{CARNAC} Chart Library is an extension to the Qt library that adds powerful visualization.
+The main idea is to allow programming complex charts with minimum effort.
+Some features of \emph{Carnac} are the large number of different chart types supported,
+and its flexibility in setting up axes and labels.
+
+% GNUplot++
+
+\emph{GNUplot++}~\cite{GNUplot++} is a wrapper of GNUplot through C++.
+GNUplot is a very old and properly build command-line program that can generate different types of plots, frequently used for publication quality graphics,
+and is multi-platform (Linux, Microsoft Windows, Mac OS X, etc)
+\emph{GNUplot++} mixes the powerful GNUplot tools with many features of standard C++, for example templates class.
+It uses many features of standard C++, like integration to the standard template library (STL) and its iterators.
+\emph{GNUplot++} is distributed under GPL.
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../article"
+%%% End:

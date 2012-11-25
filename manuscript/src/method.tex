@@ -1,0 +1,32 @@
+% About graphical library benchmark
+The graphical library benchmark was performed in the same conditions for each library,
+the idea was to test the Frames Per Second (FPS) to compare their performance.
+Each program has a similar code structure, with the following conditions:
+\begin{itemize}
+	\item One thread in charge of feeding the plot with random data.
+	\item A main thread to execute the program.
+	\item A program widget without details, only the dynamic plotted data (axis, labels, etc)
+\end{itemize}
+The next step is a comparison between graphical libraries and study
+the behavior with different latency times (data actualization rate), and finally
+extract a conclusion about the best performing graphical library.
+Finally, with the graphical library chosen, the task is to compare language
+performance.
+
+% About the real trending, ssg.
+
+On the other hand, the real benchmark was performed on an existing application, the Sampling System GUI.
+The ACS Sampling System is a collection of objects designed to easily sample an ACS Components Property
+value over time~\cite{acssamp}.
+The Sampling System GUI (SSG) is a client to the Sampling System written in Java, using the JChart2D library.
+SSG communicates with several Sampling Managers to create Sampling Objects
+and group them as needed, in order to sample properties, and finally plot the values
+in user-time (i.e., as they arrive through the ACS Notification Channel~\cite{acs:notification_channel}).
+SSG allows easy, quick visualization of system behavior during a period of time,
+or under certain circumstances, and gives the possibility of visually correlating the values of
+different properties of the system.
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../article"
+%%% End:
